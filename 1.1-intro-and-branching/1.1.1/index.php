@@ -1,5 +1,28 @@
 <?php
-$variable = 1.5;
+$variable = 11;
+$type = 'is float';
+$text = 'Массив, объект или ресурс';
+
+if (is_float($variable)) {
+    $type = ' is float';
+    $text = 'Число с плавающей точкой. <br>
+    Используется для вещественных чисел.';
+} elseif (is_bool($variable)) {
+    $type = 'Variable is bool';
+    $text = 'Тип boolean может быть либо true, либо false';
+} elseif (is_int($variable)) {
+    $type = ' is integer';
+    $text = 'Целое число';
+} elseif (is_string($variable)) {
+    $type = ' is string';
+    $text = 'Строка - это набор символов';
+} elseif (is_null($variable)) {
+    $type = 'Variable is null';
+    $text = 'Переменная без значения';
+} else {
+    $type = ' is other';
+};
+
 ?>
 
 <!DOCTYPE html>
@@ -9,25 +32,8 @@ $variable = 1.5;
     <title>bPHP - 1.1.1</title>
 </head>
 <body>
-    <p><?=$variable?> is<?
-if (is_bool($variable)) {
-    echo " bool";
-} elseif (is_float($variable)) {
-    echo " float</br>"; 
-    echo "Число с плавающей точкой.</br>";   
-    echo  "Используется для вещественных чисел.";
-} elseif (is_null($variable)) {
-    echo " null";
-} elseif (is_string($variable)) {
-    echo " string";
-} elseif (is_int($variable)) {
-    echo " integer";
-} else {
-    echo " other";
-}; 
-?>
-</p>
-
+    <p><?=$variable?> <?=$type?></p>
+    <p><?=$text?></p>
 </body>
 </html>
 
