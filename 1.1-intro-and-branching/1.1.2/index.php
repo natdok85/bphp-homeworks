@@ -4,10 +4,13 @@ $image = 'img/1.jpg';
 $day = 'понедельник';
 $message = 'Это лучший день, чтобы обратиться в Horns&Hooves! Мы работаем для Вас до 18.00';
 
-if (date("H") < 11 and date("H") <= 6) {
+if (date("H") < 11 and date("H") >= 6) {
     $text = 'Доброе утро!';
     $image = 'img/1.jpg';
-} elseif (date("H") >= 23 and date("H") < 6) {
+} elseif (date("H") >= 23 and date("H") < 0) {
+    $text = 'Доброй ночи!';
+    $image = 'img/2.jpg';
+} elseif (date("H") >= 0 and date("H") < 6) {
     $text = 'Доброй ночи!';
     $image = 'img/2.jpg';
 } elseif (date("H") >= 18 and date("H") < 23) {
